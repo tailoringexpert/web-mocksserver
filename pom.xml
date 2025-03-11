@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>eu.tailoringexpert</groupId>
+    <artifactId>tailoringexpert-web-servermocks</artifactId>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <version>0.0.1-SNAPSHOT</version>
+    <description>TailoringExpert Web Frontend Server Mocks</description>
+    <packaging>jar</packaging>
+
+    <inceptionYear>2022</inceptionYear>
+
+    <organization>
+        <name>Michael Bädorf and others</name>
+        <url>https://github.com/tailoringexpert/web-servermocks</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>Michael Baedorf</name>
+            <email>tailoringexpert@michael-baedorf.de</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/tailoringexpert/web-servermocks.git</connection>
+        <developerConnection>scm:git:https://github.com/tailoringexpert/web-servermocks.git</developerConnection>
+        <url>https://github.com/tailoringexpert/web-servermocks.git</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <license.licenseName>gpl_v3</license.licenseName>
+        <npm.mode>development</npm.mode>
+
+        <gitflow-maven-plugin.version>1.21.0</gitflow-maven-plugin.version>
+        <frontend-maven-plugin.verion>1.15.0</frontend-maven-plugin.verion>
+        <node.version>22.14.0</node.version>
+        <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+        <maven-release-plugin.version>3.0.0</maven-release-plugin.version>
+        <maven-release-plugin.goal>install</maven-release-plugin.goal>
+    </properties>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>tailoringexpert-snapshots</id>
+            <!--suppress UnresolvedMavenProperty -->
+            <url>${tailoringexpert-snapshots.repository}</url>
+        </snapshotRepository>
+        <repository>
+            <id>tailoringexpert-releases</id>
+            <!--suppress UnresolvedMavenProperty -->
+            <url>${tailoringexpert-releases.repository}</url>
+        </repository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.amashchenko.maven.plugin</groupId>
+                <artifactId>gitflow-maven-plugin</artifactId>
+                <version>${gitflow-maven-plugin.version}</version>
+                <configuration>
+                    <verbose>true</verbose>
+                    <featureSquash>true</featureSquash>
+                    <gitFlowConfig>
+                        <productionBranch>main</productionBranch>
+                        <developmentBranch>develop</developmentBranch>
+                        <featureBranchPrefix>feature/</featureBranchPrefix>
+                        <releaseBranchPrefix>release/</releaseBranchPrefix>
+                        <hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
+                        <supportBranchPrefix>support/</supportBranchPrefix>
+                        <versionTagPrefix>v</versionTagPrefix>
+                        <origin>origin</origin>
+                    </gitFlowConfig>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${maven-release-plugin.version}</version>
+                <configuration>
+                    <goals>${maven-release-plugin.goal}</goals>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>distribution.xml</descriptor>
+                        <descriptor>docker.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven-resources-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>prepare-package</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>target/classes/public</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>dist</directory>
+                                </resource>
+                                <resource>
+                                    <directory>public</directory>
+                                </resource>
+                                <resource>
+                                    <directory>/</directory>
+                                    <includes>index.html</includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <version>${frontend-maven-plugin.verion}</version>
+                <executions>
+                    <execution>
+                        <id>install node and npm</id>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <nodeVersion>v${node.version}</nodeVersion>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>npm install</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <arguments>install</arguments>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>npm run build</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <arguments>run build</arguments>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>npx npm-force-resolutions</id>
+                        <goals>
+                            <goal>npx</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <arguments>npm-force-resolutions</arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <nodeVersion>v${node.version}</nodeVersion>
+                </configuration>
+
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>serve</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.eirslett</groupId>
+                        <artifactId>frontend-maven-plugin</artifactId>
+                        <version>${frontend-maven-plugin.verion}</version>
+                        <executions>
+                            <execution>
+                                <id>npm-run-serve</id>
+                                <goals>
+                                    <goal>npm</goal>
+                                </goals>
+                                <phase>generate-resources</phase>
+                                <configuration>
+                                    <arguments>run dev --port 3000 </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <nodeVersion>v${node.version}</nodeVersion>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+
+        </profile>
+    </profiles>
+</project>
