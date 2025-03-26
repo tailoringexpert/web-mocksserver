@@ -1,0 +1,11 @@
+{
+	"scripts": {
+		"mocks" : "mocks-server"
+	},
+	
+	"devDependencies": {
+		"@mocks-server/main": "^4.1.0",
+		"underscore":  "^1.13.7",
+		"@dotenvx/dotenvx": "^1.39.0"
+	}
+}

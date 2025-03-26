@@ -1,0 +1,21 @@
+{
+  "levels" : {
+    "A" : 10,
+    "B" : 10,
+    "C" : 7,
+    "E" : 10,
+    "F" : 10,
+    "J" : 10,
+    "M" : 1,
+    "P" : 10,
+    "Q" : 10,
+    "R" : 10,
+    "S" : 5,
+    "W" : 10
+  },
+  "_links" : {
+    "self" : {
+      "href" : "/api/project/DEMO/tailoring/master/selectionvector"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "mock": {
+    "collections": {
+      "selected": "mock"
+    }
+  },
+  "server": {
+    "jsonBodyParser": {
+      "options": {
+        "limit": "5mb"
+      }
+	}
+  }
+}

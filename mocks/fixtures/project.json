@@ -1,0 +1,80 @@
+{
+    "name": "DEMO",
+    "projectManager": null,
+    "creationTimestamp": "10.03.2025",
+    "tailorings": [
+        {
+            "name": "master",
+            "phases": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "catalogVersion": "8.2.1",
+            "state": "CREATED",
+            "_links": {
+                "self": {
+                    "href": "/api/project/DEMO/tailoring/master"
+                },
+                "screeningsheet": {
+                    "href": "/api/project/DEMO/tailoring/master/screeningsheet"
+                },
+                "selectionvector": {
+                    "href": "/api/project/DEMO/tailoring/master/selectionvector"
+                },
+                "signature": {
+                    "href": "/api/project/DEMO/tailoring/master/signature"
+                },
+                "document": {
+                    "href": "/api/project/DEMO/tailoring/master/document"
+                },
+                "tailoringcatalog": {
+                    "href": "/api/project/DEMO/tailoring/master/document/catalog"
+                },
+                "compare": {
+                    "href": "/api/project/DEMO/tailoring/master/compare"
+                },
+                "catalog": {
+                    "href": "/api/project/DEMO/tailoring/master/catalog"
+                },
+                "name": {
+                    "href": "/api/project/DEMO/tailoring/master/name"
+                },
+                "import": {
+                    "href": "/api/project/DEMO/tailoring/master/requirement/import"
+                },
+                "basecatalog": {
+                    "href": "/api/catalog/8.2.1/pdf"
+                },
+                "attachment": {
+                    "href": "/api/project/DEMO/tailoring/master/attachment"
+                },
+                "note": {
+                    "href": "/api/project/DEMO/tailoring/master/note"
+                },
+                "state": {
+                    "href": "/api/project/DEMO/tailoring/master/state/AGREED"
+                }
+            }
+        }
+    ],
+    "state": "ONGOING",
+    "_links": {
+        "self": {
+            "href": "/api/project/DEMO"
+        },
+        "selectionvector": {
+            "href": "/api/project/DEMO/selectionvector"
+        },
+        "screeningsheet": {
+            "href": "/api/project/DEMO/screeningsheet"
+        },
+        "tailoring": {
+            "href": "/api/project/DEMO/tailoring"
+        },
+        "state": {
+            "href": "/api/project/DEMO/state/COMPLETED"
+        }
+    }
+}

@@ -1,0 +1,54 @@
+{
+  "_embedded": {
+    "projects": [
+      {
+        "name": "DEMO",
+        "projectManager": null,
+        "creationTimestamp": "20.02.2025",
+        "state": "ONGOING",
+        "_links": {
+          "self": {
+            "href": "/api/project/DEMO"
+          },
+          "selectionvector": {
+            "href": "/api/project/DEMO/selectionvector"
+          },
+          "screeningsheet": {
+            "href": "/api/project/DEMO/screeningsheet"
+          },
+          "tailoring": {
+            "href": "/api/project/DEMO/tailoring"
+          },
+          "state": {
+            "href": "/api/project/DEMO/state/ONGOING"
+          }
+        }
+      },
+      {
+        "name": "SPAW",
+        "projectManager": null,
+        "creationTimestamp": "20.02.2025",
+        "state": "COMPLETED",
+        "_links": {
+          "self": {
+            "href": "/api/project/SPAW"
+          },
+          "selectionvector": {
+            "href": "/api/project/SPAW/selectionvector"
+          },
+          "screeningsheet": {
+            "href": "/api/project/SPAW/screeningsheet"
+          },
+          "tailoring": {
+            "href": "/api/project/SPAW/tailoring"
+          },
+          "state": {
+            "href": "/api/project/SPAW/state/COMPLETED"
+          }
+        }
+      }
+    ]
+  },
+  "fallbackType": null,
+  "fullType": null
+}

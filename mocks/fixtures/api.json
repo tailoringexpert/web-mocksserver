@@ -1,0 +1,22 @@
+{
+  "_links": {
+    "catalog": {
+      "href": "/api/catalog"
+    },
+    "project": {
+      "href": "/api/project"
+    },
+    "screeningsheet": {
+      "href": "/api/screeningsheet"
+    },
+    "selectionvector": {
+      "href": "/api/selectionvector"
+    },
+    "catalogconversion": {
+      "href": "/api/catalog/convert/excel"
+    },
+    "catalogpreview": {
+      "href": "/api/catalog/preview"
+    }
+  }
+}

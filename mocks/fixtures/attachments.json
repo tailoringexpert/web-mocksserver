@@ -1,0 +1,16 @@
+{
+  "_embedded" : {
+    "files" : [ {
+      "name" : "catalog_v8.2.1.json",
+      "type" : "json",
+      "hash" : "e98eafc00f4dc6d742f18b5803c9516c302ce82d81168332518faaf823266c19",
+      "_links" : {
+        "self" : {
+          "href" : "/api/project/DEMO/tailoring/master/attachment/catalog_v8.2.1.json"
+        }
+      }
+    } ]
+  },
+  "fallbackType" : null,
+  "fullType" : null
+}

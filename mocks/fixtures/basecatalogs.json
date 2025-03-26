@@ -1,0 +1,43 @@
+{
+  "_embedded": {
+    "baseCatalogVersions": [
+      {
+        "version": "8.2.1",
+        "validFrom": "10.03.2025",
+        "validUntil": null,
+        "valid": true,
+        "_links": {
+          "project": {
+            "href": "/api/catalog/8.2.1/project"
+          },
+          "self": {
+            "href": "/api/catalog/8.2.1"
+          },
+          "pdf": {
+            "href": "/api/catalog/8.2.1/pdf"
+          },
+          "excel": {
+            "href": "/api/catalog/8.2.1/excel"
+          },
+          "json": {
+            "href": "/api/catalog/8.2.1/json"
+          },
+          "document": {
+            "href": "/api/catalog/8.2.1/document"
+          },
+          "validuntil": {
+            "href": "/api/catalog/8.2.1/validuntil/{validuntil}",
+            "templated": true
+          }
+        }
+      }
+    ]
+  },
+  "_links": {
+    "convert": {
+      "href": "/api/catalog/convert/excel"
+    }
+  },
+  "fallbackType": null,
+  "fullType": null
+}

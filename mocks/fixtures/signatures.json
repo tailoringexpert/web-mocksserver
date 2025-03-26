@@ -1,0 +1,97 @@
+{
+  "_embedded" : {
+    "signatures" : [ {
+      "faculty" : "Prepared",
+      "signee" : null,
+      "state" : null,
+      "applicable" : false,
+      "_links" : {
+        "self" : {
+          "href" : "/api/project/DEMO/tailoring/master/signature/Prepared"
+        }
+      }
+    }, {
+      "faculty" : "Software",
+      "signee" : "Ted Nerd / DEMO-Department",
+      "state" : "AGREED",
+      "applicable" : false,
+      "_links" : {
+        "self" : {
+          "href" : "/api/project/DEMO/tailoring/master/signature/Software"
+        }
+      }
+    }, {
+      "faculty" : "Safety",
+      "signee" : "Prof. Dr. Homer Simpson / DEMO-Department",
+      "state" : "AGREED",
+      "applicable" : false,
+      "_links" : {
+        "self" : {
+          "href" : "/api/project/DEMO/tailoring/master/signature/Safety"
+        }
+      }
+    }, {
+      "faculty" : "Space Cybersecurity",
+      "signee" : "Pigs in Space / DEMO-Department",
+      "state" : "AGREED",
+      "applicable" : false,
+      "_links" : {
+        "self" : {
+          "href" : "/api/project/DEMO/tailoring/master/signature/Space%20Cybersecurity"
+        }
+      }
+    }, {
+      "faculty" : "Space Debris and Substainibilty",
+      "signee" : "",
+      "state" : "AGREED",
+      "applicable" : false,
+      "_links" : {
+        "self" : {
+          "href" : "/api/project/DEMO/tailoring/master/signature/Space%20Debris%20and%20Substainibilty"
+        }
+      }
+    }, {
+      "faculty" : "PA Manager",
+      "signee" : null,
+      "state" : "AGREED",
+      "applicable" : false,
+      "_links" : {
+        "self" : {
+          "href" : "/api/project/DEMO/tailoring/master/signature/PA%20Manager"
+        }
+      }
+    }, {
+      "faculty" : "Ground Segment",
+      "signee" : "",
+      "state" : "AGREED",
+      "applicable" : false,
+      "_links" : {
+        "self" : {
+          "href" : "/api/project/DEMO/tailoring/master/signature/Ground%20Segment"
+        }
+      }
+    }, {
+      "faculty" : "Project Management",
+      "signee" : null,
+      "state" : "AGREED",
+      "applicable" : false,
+      "_links" : {
+        "self" : {
+          "href" : "/api/project/DEMO/tailoring/master/signature/Project%20Management"
+        }
+      }
+    }, {
+      "faculty" : "Head of Product Assurance",
+      "signee" : "",
+      "state" : "RELEASED",
+      "applicable" : false,
+      "_links" : {
+        "self" : {
+          "href" : "/api/project/DEMO/tailoring/master/signature/Head%20of%20Product%20Assurance"
+        }
+      }
+    } ]
+  },
+  "fallbackType" : null,
+  "fullType" : null
+}
